@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeshen.dev - Cyberpunk Developer Portfolio</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/src/index.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-canvas"></canvas>
+
+    <!-- Scanlines Effect -->
+    <div class="scanlines"></div>
+
+    <!-- Boot Screen -->
+    <div class="boot-screen" id="bootScreen">
+        <div class="boot-line" data-text="> Initializing developer profile..."></div>
+        <div class="boot-line" data-text="> Loading libraries: GSAP • THREE • SYS_UI..."></div>
+        <div class="boot-line" data-text="> Checking credibility... (proofs available)"></div>
+        <div class="boot-line" data-text="> Connecting to Zeshen.dev..."></div>
+        <div class="boot-line" data-text="> Access granted ✅"></div>
+        <div class="boot-line" data-text="> Boot complete. Preparing portfolio..."></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container" id="mainContainer">
+        <!-- Sticky Navigation -->
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#hero" class="nav-link" data-section="hero">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="glitch hero-title" data-text="Zeshen — I build playable tech">Zeshen — I build playable tech</h1>
+                    <p class="hero-subtitle">6+ years ROBLOX .lua scripting • UI design • HTML/CSS/JS • PhaserJS • Node • 26+ libs</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contact" class="cyber-button primary">Hire Me</a>
+                    </div>
+
+                    <div class="glass-panel availability-panel">
+                        <div class="panel-header">
+                            <i class="fas fa-circle status-indicator"></i>
+                            <span>Available for work</span>
+                        </div>
+                        <div class="skills-badges">
+                            <span class="skill-badge">Lua Expert</span>
+                            <span class="skill-badge">Game Dev</span>
+                            <span class="skill-badge">UI/UX</span>
+                            <span class="skill-badge">Backend</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="skill-visualization" id="skillVisualization">
+                        <div class="code-lines">
+                            <div class="code-line">
+                                <span class="code-keyword">function</span> 
+                                <span class="code-function">buildAmazingGame</span>() {
+                            </div>
+                            <div class="code-line">
+                                &nbsp;&nbsp;<span class="code-keyword">const</span> 
+                                <span class="code-variable">skills</span> = [<span class="code-string">'Lua'</span>, <span class="code-string">'React'</span>, <span class="code-string">'Node'</span>];
+                            </div>
+                            <div class="code-line">
+                                &nbsp;&nbsp;<span class="code-keyword">return</span> 
+                                <span class="code-variable">skills</span>.<span class="code-method">map</span>(<span class="code-parameter">skill</span> => 
+                            </div>
+                            <div class="code-line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;<span class="code-variable">magic</span>(<span class="code-parameter">skill</span>)
+                            </div>
+                            <div class="code-line">
+                                &nbsp;&nbsp;).<span class="code-method">join</span>(<span class="code-string">'🎮'</span>);
+                            </div>
+                            <div class="code-line">};</div>
+                            <div class="code-cursor">█</div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-panel experience-panel">
+                        <h3>Previous Work</h3>
+                        <div class="experience-item">
+                            <div class="exp-company">Anime Battlegrounds X</div>
+                            <div class="exp-role">Lead Developer</div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="exp-company">Obscure Horror</div>
+                            <div class="exp-role">UI Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title glitch" data-text="PROJECTS">PROJECTS</h2>
+            <div class="projects-grid">
+                <div class="project-card" data-project="anime-battlegrounds">
+                    <div class="project-badge">Combat Battlegrounds</div>
+                    <h3 class="project-title">Anime Battlegrounds X</h3>
+                    <div class="project-role">Lead Developer</div>
+                    <p class="project-description">
+                        Massive multiplayer anime fighting game with advanced combat systems, 
+                        custom UI frameworks, and real-time multiplayer synchronization.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">70M+</span>
+                            <span class="stat-label">Visits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">370K+</span>
+                            <span class="stat-label">Favourites</span>
+                        </div>
+                    </div>
+                    <a href="https://www.roblox.com/games/7655489843/JOHO-2-Anime-Battlegrounds-X" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+                <div class="project-card" data-project="obscure-horror">
+                    <div class="project-badge">Horror</div>
+                    <h3 class="project-title">Obscure Horror</h3>
+                    <div class="project-role">UI Designer & Lead Developer</div>
+                    <p class="project-description">
+                        Atmospheric horror experience with custom lighting systems, 
+                        immersive sound design, and psychological gameplay mechanics.
+                    </p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">18M+</span>
+                            <span class="stat-label">Visits</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">400K+</span>
+                            <span class="stat-label">Favourites</span>
+                        </div>
+                    </div>
+                    <a href="https://www.roblox.com/games/12970059795/OBSCURE-HORROR" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+
+            
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2 class="section-title glitch" data-text="SKILLS">SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">Languages</h3>
+                    <div class="glass-panel skills-panel">
+                        <div class="skill-item">
+                            <span class="skill-name">Lua</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="98"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">TypeScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Frameworks/Libs</h3>
+                    <div class="glass-panel skills-panel">
+                        <div class="skill-item">
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="92"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">PhaserJS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">GSAP</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Game Types</h3>
+                    <div class="glass-panel skills-panel">
+                        <div class="skill-item">
+                            <span class="skill-name">Fighting Games</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="95"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Horror</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Simulation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="88"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">RPG</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="85"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Extras</h3>
+                    <div class="glass-panel skills-panel">
+                        <div class="skill-item">
+                            <span class="skill-name">UI/UX Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="93"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">3D Modeling</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="5"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Sound Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="5"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Game Analytics</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-skill="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-content">
+                <h2 class="contact-title">Let's build something addictive.</h2>
+                
+                <div class="contact-info">
+                    <div class="contact-email">
+                        <i class="fas fa-envelope"></i>
+                        <span>zeshenintheseshen@gmail.com</span>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://instagram.com/zeshen.official" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i>
+                            <span>zeshen.official</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-buttons">
+                    <a href="mailto:zeshenintheseshen@gmail.com" class="cyber-button primary">Email Me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sticky Hire Button -->
+        <div class="hire-button-sticky">
+            <a href="#contact" class="hire-btn">
+                <span class="hire-text">HIRE</span>
+                <span class="hire-subtext">3 hrs/day</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Custom Cursor
+        (function() {
+            const cursor = document.querySelector('.cursor');
+            const follower = document.querySelector('.cursor-follower');
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            function updateCursor() {
+                cursorX += (mouseX - cursorX) * 0.1;
+                cursorY += (mouseY - cursorY) * 0.1;
+                
+                cursor.style.left = mouseX + 'px';
+                cursor.style.top = mouseY + 'px';
+                follower.style.left = cursorX + 'px';
+                follower.style.top = cursorY + 'px';
+                
+                requestAnimationFrame(updateCursor);
+            }
+            updateCursor();
+
+            // Hide cursor on touch devices
+            if ('ontouchstart' in window) {
+                cursor.style.display = 'none';
+                follower.style.display = 'none';
+            }
+        })();
+
+        // Matrix Rain Effect
+        (function() {
+            const canvas = document.getElementById('matrix-canvas');
+            const ctx = canvas.getContext('2d');
+
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resizeCanvas();
+
+            const matrix = "ZESHENDEV0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*(){}[]|\\~`";
+            const matrixArray = matrix.split("");
+
+            const fontSize = 14;
+            let columns = Math.floor(canvas.width / fontSize);
+            let drops = [];
+
+            function initDrops() {
+                columns = Math.floor(canvas.width / fontSize);
+                drops = [];
+                for(let x = 0; x < columns; x++) {
+                    drops[x] = Math.random() * canvas.height / fontSize;
+                }
+            }
+            initDrops();
+
+            function drawMatrix() {
+                ctx.fillStyle = 'rgba(10, 10, 10, 0.04)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                ctx.fillStyle = '#00FF41';
+                ctx.font = fontSize + 'px Orbitron, monospace';
+
+                for(let i = 0; i < drops.length; i++) {
+                    const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
+                    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                    if(drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                        drops[i] = 0;
+                    }
+                    drops[i]++;
+                }
+            }
+
+            setInterval(drawMatrix, 50);
+
+            window.addEventListener('resize', () => {
+                resizeCanvas();
+                initDrops();
+            });
+        })();
+
+        // Three.js Hologram Effect
+        (function() {
+            const container = document.getElementById('three-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 300 / 300, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            
+            renderer.setSize(300, 300);
+            container.appendChild(renderer.domElement);
+
+            // Create holographic cube
+            const geometry = new THREE.BoxGeometry(1.5, 1.5, 1.5);
+            const edges = new THREE.EdgesGeometry(geometry);
+            const material = new THREE.LineBasicMaterial({ 
+                color: 0x00FF41,
+                transparent: true,
+                opacity: 0.8
+            });
+            const cube = new THREE.LineSegments(edges, material);
+            scene.add(cube);
+
+            // Add wireframe
+            const wireframeMaterial = new THREE.MeshBasicMaterial({ 
+                color: 0x00D2FF, 
+                wireframe: true,
+                transparent: true,
+                opacity: 0.3
+            });
+            const wireframeCube = new THREE.Mesh(geometry, wireframeMaterial);
+            scene.add(wireframeCube);
+
+            camera.position.z = 3;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                cube.rotation.x += 0.01;
+                cube.rotation.y += 0.01;
+                wireframeCube.rotation.x += 0.005;
+                wireframeCube.rotation.y += 0.005;
+                
+                renderer.render(scene, camera);
+            }
+            animate();
+        })();
+
+        // Boot Sequence
+        (function() {
+            const bootScreen = document.getElementById('bootScreen');
+            const mainContainer = document.getElementById('mainContainer');
+            const bootLines = document.querySelectorAll('.boot-line');
+
+            function typeWriter(element, text, speed = 50) {
+                return new Promise((resolve) => {
+                    let i = 0;
+                    element.classList.add('typing');
+                    element.style.opacity = '1';
+                    
+                    function type() {
+                        if (i < text.length) {
+                            element.textContent = text.substring(0, i + 1);
+                            i++;
+                            setTimeout(type, speed);
+                        } else {
+                            element.classList.remove('typing');
+                            resolve();
+                        }
+                    }
+                    type();
+                });
+            }
+
+            async function runBootSequence() {
+                for(let i = 0; i < bootLines.length; i++) {
+                    const line = bootLines[i];
+                    const text = line.getAttribute('data-text');
+                    await typeWriter(line, text, 40);
+                    await new Promise(resolve => setTimeout(resolve, 300));
+                }
+
+                await new Promise(resolve => setTimeout(resolve, 1500));
+                
+                gsap.to(bootScreen, {
+                    opacity: 0,
+                    duration: 1,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        bootScreen.style.display = 'none';
+                        gsap.to(mainContainer, {
+                            opacity: 1,
+                            y: 0,
+                            duration: 1.5,
+                            ease: "power3.out"
+                        });
+                    }
+                });
+            }
+
+            runBootSequence();
+        })();
+
+        // Navigation and Smooth Scrolling
+        (function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Hire button sticky functionality
+            const hireButton = document.querySelector('.hire-button-sticky a');
+            if (hireButton) {
+                hireButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.querySelector('#contact').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            }
+        })();
+
+        // Skill Bar Animations
+        (function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBars = entry.target.querySelectorAll('.skill-progress');
+                        progressBars.forEach((bar, index) => {
+                            const skillLevel = bar.getAttribute('data-skill');
+                            setTimeout(() => {
+                                gsap.to(bar, {
+                                    width: skillLevel + '%',
+                                    duration: 2,
+                                    ease: "power3.out"
+                                });
+                            }, index * 100);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const skillsSection = document.getElementById('skills');
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
+        })();
+
+        // Project Card Interactions
+        (function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach(card => {
+                const link = card.querySelector('.project-link');
+                
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        y: -10,
+                        scale: 1.02,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        y: 0,
+                        scale: 1,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                });
+
+                // Make entire card clickable
+                card.addEventListener('click', () => {
+                    if (link) {
+                        window.open(link.href, '_blank');
+                    }
+                });
+            });
+        })();
+
+        // Section Reveal Animations
+        (function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        gsap.fromTo(entry.target, 
+                            {
+                                opacity: 0,
+                                y: 50
+                            },
+                            {
+                                opacity: 1,
+                                y: 0,
+                                duration: 1,
+                                ease: "power3.out"
+                            }
+                        );
+                        sectionObserver.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if (section.id !== 'hero') {
+                    sectionObserver.observe(section);
+                }
+            });
+        })();
+
+        // Glitch Effect Enhancement
+        (function() {
+            const glitchElements = document.querySelectorAll('.glitch');
+            
+            glitchElements.forEach(element => {
+                element.addEventListener('mouseenter', () => {
+                    element.style.animation = 'glitch-skew 0.1s infinite linear alternate-reverse';
+                    setTimeout(() => {
+                        element.style.animation = 'glitch-skew 2s infinite linear alternate-reverse';
+                    }, 500);
+                });
+            });
+        })();
+
+        // Particle Mouse Interaction
+        (function() {
+            const particles = [];
+            const particleCount = 50;
+
+            function createParticle(x, y) {
+                return {
+                    x: x,
+                    y: y,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    life: 1,
+                    decay: Math.random() * 0.02 + 0.01
+                };
+            }
+
+            document.addEventListener('mousemove', (e) => {
+                if (Math.random() < 0.1) {
+                    particles.push(createParticle(e.clientX, e.clientY));
+                    if (particles.length > particleCount) {
+                        particles.shift();
+                    }
+                }
+            });
+
+            function updateParticles() {
+                const canvas = document.getElementById('matrix-canvas');
+                const ctx = canvas.getContext('2d');
+                
+                particles.forEach((particle, index) => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    particle.life -= particle.decay;
+                    
+                    if (particle.life <= 0) {
+                        particles.splice(index, 1);
+                        return;
+                    }
+                    
+                    ctx.save();
+                    ctx.globalAlpha = particle.life;
+                    ctx.fillStyle = '#00FF41';
+                    ctx.fillRect(particle.x, particle.y, 2, 2);
+                    ctx.restore();
+                });
+                
+                requestAnimationFrame(updateParticles);
+            }
+            updateParticles();
+        })();
+    </script>
+</body>
+</html>
